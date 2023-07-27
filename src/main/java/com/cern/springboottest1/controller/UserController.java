@@ -23,7 +23,7 @@ public class UserController {
     @RequestMapping("/login")
     public String login(HttpServletRequest request) {
         //这里就用Session代替ID吧
-        //需要在logbok中配置，这里没配
+        //需要在logback中配置，这里没配
         MDC.put("reqId", request.getSession().getId());
         log.info("Someone is logging to the system!!!");
         return "login";
