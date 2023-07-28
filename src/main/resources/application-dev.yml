@@ -7,11 +7,23 @@ spring:
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      one:
+        max-active: 100 #最大连接数
+        min-idle: 20 #最小连接数
+        max-wait: 2000 #超时时间（ms）
   mvc:
     static-path-pattern: /static/**
   redis:
     host: 192.168.1.110
     port: 6379
     database: 0
+
+# mybatis-plus配置
+mybatis-plus:
+  # xml文件位置
+  mapper-locations: classpath:mapper/*.xml
+
 server:
   port: 8080
