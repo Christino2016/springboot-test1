@@ -9,9 +9,9 @@ import java.util.Date;
 public class SchedulingConfiguration {
 
     //@Scheduled(fixedRate = 5000)
-    @Scheduled(cron = "*/50 * * * * ?")
+    @Scheduled(cron = "*/1500 * * * * ?")
     public void test() {
-        System.out.println("定时任务 === This is Scheduling 10s Task - " + new Date());
+        System.out.println("定时任务 === This is Scheduling 150s Task - " + new Date());
     }
 
 

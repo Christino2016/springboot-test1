@@ -37,10 +37,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .and()
                 .formLogin()
                 // 登录页面地址（也即判断请求未登录验证时，重定向到的页面）
-//                .loginPage("/login")
-//                // 登录接口路径
-//                .loginProcessingUrl("/doLogin")
-//                .permitAll()
+                .loginPage("/login")
+                // 登录接口路径
+                .loginProcessingUrl("/doLogin")
+                .permitAll()
                 // 登录成功后重定向到的页面地址
                 .defaultSuccessUrl("/index", true)
                 // 登录失败时重定向到的页面

@@ -1,6 +1,8 @@
 package com.cern.springboottest1.controller;
 
+import com.cern.springboottest1.domain.Account;
 import com.cern.springboottest1.domain.UserData;
+import com.cern.springboottest1.mapper.AccountMapper;
 import com.cern.springboottest1.mapper.UserMapper;
 import com.cern.springboottest1.service.AsyncTestService;
 import lombok.extern.slf4j.Slf4j;
@@ -12,10 +14,15 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 @Slf4j
 @Controller
 public class UserController {
+
+    //value可读取配置文件中的变量
+    @Value("${property.property1}")
+    String property;
 
     @Resource
     AsyncTestService asyncTestService;
@@ -23,23 +30,27 @@ public class UserController {
     @Resource
     UserMapper userMapper;
 
-    //value可读取配置文件中的变量
-    @Value("${property.property1}")
-    String property;
+    @Resource
+    AccountMapper accountMapper;
 
     //index页面
     @RequestMapping("/login")
     public String login(HttpServletRequest request) {
         log.info("登录日志 === Someone is logging to the system!!!");
-        //这里就用Session代替ID吧
-        //需要在logback中配置，这里没配
-        MDC.put("reqId", request.getSession().getId());
+
         //测试异步操作
-        asyncTestService.test();
-        System.out.println("同步测试 === This is a Sync test!");
+//        asyncTestService.test();
+//        System.out.println("同步测试 === This is a Sync test!");
+
         //测试Redis cache
-        userMapper.getNum();
         System.out.println("Redis Cache测试 === database count:" + userMapper.getNum());
+
+        //测试Mybatics plus
+        List<Account> accountList = accountMapper.findByUsername("cern");
+        if (accountList.size() > 0) {
+            Account account = accountList.get(0);
+            System.out.println("Mybatis-plus测试 === username:" + account.getUsername() + "$" + account.getPassword());
+        }
 
         return "login";
     }
@@ -47,6 +58,7 @@ public class UserController {
     //index页面
     @RequestMapping("/index")
     public String index() {
+        System.out.println("Index页面访问 === ");
         return "index";
     }
 

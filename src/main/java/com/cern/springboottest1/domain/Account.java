@@ -6,14 +6,15 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import java.io.Serializable;
 import java.util.Date;
 
 @Data
 @TableName("t_account")
-public class Account {
+public class Account implements Serializable  {
 
     @TableId(type = IdType.AUTO)
-    private Long id;
+    private int id;
 
     @TableField("username")
     private String username;
