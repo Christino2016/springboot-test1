@@ -16,6 +16,9 @@ public class Account implements Serializable  {
     @TableId(type = IdType.AUTO)
     private int id;
 
+    @TableField("year")
+    private String year;
+
     @TableField("username")
     private String username;
 
@@ -25,12 +28,12 @@ public class Account implements Serializable  {
     @TableField("role")
     private String role;
 
-    @TableField(value = "update_time" ,fill = FieldFill.INSERT_UPDATE)
+    @TableField(value = "updateTime" ,fill = FieldFill.INSERT_UPDATE)
     //后端传给前端的时间格式
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     //前端传给后端的时间格式
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    @JsonAlias("update_time")
+    @JsonAlias("updateTime")
     private Date updateTime;
 
 }

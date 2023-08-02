@@ -1,12 +1,13 @@
 package com.cern.springboottest1.controller;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.cern.springboottest1.domain.Account;
 import com.cern.springboottest1.domain.UserData;
 import com.cern.springboottest1.mapper.AccountMapper;
 import com.cern.springboottest1.mapper.UserMapper;
+import com.cern.springboottest1.service.AccountService;
 import com.cern.springboottest1.service.AsyncTestService;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import java.util.Date;
 import java.util.List;
 
 @Slf4j
@@ -33,6 +35,9 @@ public class UserController {
     @Resource
     AccountMapper accountMapper;
 
+    @Resource
+    AccountService accountService;
+
     //index页面
     @RequestMapping("/login")
     public String login(HttpServletRequest request) {
@@ -51,7 +56,18 @@ public class UserController {
             Account account = accountList.get(0);
             System.out.println("Mybatis-plus测试 === username:" + account.getUsername() + "$" + account.getPassword());
         }
+        double rand = Math.random();
+        Account account = new Account();
+        account.setYear("2023");
+        account.setUsername("testMan" + rand);
+        account.setPassword("123456");
+        account.setRole("admin");
+        account.setUpdateTime(new Date());
+        accountService.addAccount(account);
 
+        //测试Mybatics plus page分页
+        IPage<Account> iPage = accountService.searchPage(2,3);
+        iPage.getRecords().forEach(System.out::println);
         return "login";
     }
 
