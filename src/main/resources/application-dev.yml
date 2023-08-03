@@ -19,6 +19,12 @@ spring:
     host: 192.168.1.110
     port: 6379
     database: 0
+  thymeleaf:
+    cache: false
+    encoding: utf-8
+    mode: HTML
+    prefix: classpath:/templates/
+    suffix: .html
 
 # mybatis-plus配置
 mybatis-plus:

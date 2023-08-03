@@ -10,11 +10,13 @@ import com.cern.springboottest1.service.AsyncTestService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -69,6 +71,15 @@ public class UserController {
         IPage<Account> iPage = accountService.searchPage(2,3);
         iPage.getRecords().forEach(System.out::println);
         return "login";
+    }
+
+    //welcome页面
+    @RequestMapping("/welcome")
+    public String welcome(Model model) {
+        System.out.println("welcome页面访问 === ");
+        // 通过model向前端模板页面传递数据
+        model.addAttribute("currentYear", Calendar.getInstance().get(Calendar.YEAR));
+        return "welcome";
     }
 
     //index页面

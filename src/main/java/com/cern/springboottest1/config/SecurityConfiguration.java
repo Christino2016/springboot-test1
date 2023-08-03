@@ -33,7 +33,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 //这些路径需要admin角色的权限
                 //.anyRequest().hasRole("admin")
                 //其余的路径都需要登录
-                .anyRequest().authenticated()
+//                .anyRequest().authenticated()
                 .and()
                 .formLogin()
                 // 登录页面地址（也即判断请求未登录验证时，重定向到的页面）
