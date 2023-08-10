@@ -11,6 +11,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -74,12 +75,33 @@ public class UserController {
     }
 
     //welcome页面
-    @RequestMapping("/welcome")
-    public String welcome(Model model) {
-        System.out.println("welcome页面访问 === ");
+    @RequestMapping("/welcome-bootstrap")
+    public String welcomebootstrap(Model model) {
+        System.out.println("welcome-bootstrap页面访问 === ");
         // 通过model向前端模板页面传递数据
         model.addAttribute("currentYear", Calendar.getInstance().get(Calendar.YEAR));
-        return "welcome";
+        return "welcome-bootstrap";
+    }
+    //welcome页面
+    @RequestMapping("/welcome-adminlte")
+    public String welcomeadminlte(Model model) {
+        System.out.println("welcome-adminlte页面访问 === ");
+        // 通过model向前端模板页面传递数据
+        model.addAttribute("currentYear", Calendar.getInstance().get(Calendar.YEAR));
+        return "welcome-adminlte";
+    }
+
+    //welcome页面提交post
+    @PostMapping("/doWelcome")
+    public String doWelcome(HttpServletRequest request, Model model) {
+        System.out.println("doWelcome访问 === ");
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        if (username.equals("admin") && password.equals("admin")) {
+            return "index";
+        } else {
+            return "error";
+        }
     }
 
     //index页面
@@ -94,12 +116,12 @@ public class UserController {
         return "error";
     }
 
-    @RequestMapping("/student")
+    @RequestMapping("/user")
     @ResponseBody
-    public UserData student() {
+    public UserData user() {
         UserData user = new UserData();
         //user.setId(10);
-        //user.setUsername("小明");
+        user.setName("小明");
         user.setPassword("123456");
         //user.setRole("admin");
         return user;

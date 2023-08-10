@@ -23,7 +23,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         // 这里为了测试方便暂时先禁用csrf
         //http.csrf().disable();
-
+        http.csrf().ignoringAntMatchers("/druid/*");
         http
                 .authorizeHttpRequests()
                 //允许这些路径不用验证
