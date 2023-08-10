@@ -1,0 +1,968 @@
+2023-08-08 09:44:22.717  INFO 17876 --- [main] c.c.s.SpringbootTest1Application         : Starting SpringbootTest1Application using Java 1.8.0_172 on LAPTOP-OLDO6QSR with PID 17876 (D:\WorkspacesIDEA\svn\springboot-test1\target\classes started by lenovo in D:\WorkspacesIDEA\svn\springboot-test1)
+2023-08-08 09:44:22.720  INFO 17876 --- [main] c.c.s.SpringbootTest1Application         : The following 1 profile is active: "dev"
+2023-08-08 09:44:23.486  INFO 17876 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-08-08 09:44:23.490  INFO 17876 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-08-08 09:44:23.520  INFO 17876 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2023-08-08 09:44:24.156  INFO 17876 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-08-08 09:44:24.166  INFO 17876 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-08 09:44:24.166  INFO 17876 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+2023-08-08 09:44:24.336  INFO 17876 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-08 09:44:24.336  INFO 17876 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1559 ms
+2023-08-08 09:44:25.624  WARN 17876 --- [main] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "com.cern.springboottest1.domain.Account"
+2023-08-08 09:44:25.922  INFO 17876 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-08-08 09:44:26.347  INFO 17876 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@273293c8, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6f1d799, org.springframework.security.web.context.SecurityContextPersistenceFilter@f810c18, org.springframework.security.web.header.HeaderWriterFilter@3fc1abf, org.springframework.security.web.csrf.CsrfFilter@3e2c4d4b, org.springframework.security.web.authentication.logout.LogoutFilter@1de30c31, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@503a7990, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@120411ec, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@28bd5015, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@6dcbbb49, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@ca2cd5e, org.springframework.security.web.session.SessionManagementFilter@e7b0bec, org.springframework.security.web.access.ExceptionTranslationFilter@342a1f84, org.springframework.security.web.access.intercept.AuthorizationFilter@2e4ecdf8]
+2023-08-08 09:44:26.428  INFO 17876 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-08-08 09:44:26.441  INFO 17876 --- [main] c.c.s.SpringbootTest1Application         : Started SpringbootTest1Application in 4.317 seconds (JVM running for 5.877)
+2023-08-08 09:44:49.921  INFO 17876 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-08 09:44:49.921  INFO 17876 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-08-08 09:44:49.922  INFO 17876 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-08-08 09:45:18.336 ERROR 17876 --- [http-nio-8080-exec-6] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
+
+java.lang.NullPointerException: null
+	at com.baomidou.mybatisplus.extension.service.IService.list(IService.java:370)
+	at com.baomidou.mybatisplus.extension.service.IService.list(IService.java:379)
+	at com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy.invokeMethod(CglibAopProxy.java:386)
+	at org.springframework.aop.framework.CglibAopProxy.access$000(CglibAopProxy.java:85)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:704)
+	at com.cern.springboottest1.service.AccountServiceImpl$$EnhancerBySpringCGLIB$$8822c0fb.list(<generated>)
+	at com.cern.springboottest1.controller.UserRestController.getAllAccount(UserRestController.java:23)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:529)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:337)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:96)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:122)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:109)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:141)
+	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:97)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:223)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:217)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:117)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:112)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:82)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:221)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:186)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:354)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+2023-08-08 09:48:35.553 ERROR 17876 --- [http-nio-8080-exec-8] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
+
+java.lang.NullPointerException: null
+	at com.baomidou.mybatisplus.extension.service.IService.list(IService.java:370)
+	at com.baomidou.mybatisplus.extension.service.IService.list(IService.java:379)
+	at com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy.invokeMethod(CglibAopProxy.java:386)
+	at org.springframework.aop.framework.CglibAopProxy.access$000(CglibAopProxy.java:85)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:704)
+	at com.cern.springboottest1.service.AccountServiceImpl$$EnhancerBySpringCGLIB$$8822c0fb.list(<generated>)
+	at com.cern.springboottest1.controller.UserRestController.getAllAccount(UserRestController.java:23)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:529)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:337)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:96)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:122)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:109)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:141)
+	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:97)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:223)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:217)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:117)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:112)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:82)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:221)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:186)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:354)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+2023-08-08 09:48:43.895 ERROR 17876 --- [http-nio-8080-exec-8] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
+
+java.lang.NullPointerException: null
+	at com.baomidou.mybatisplus.extension.service.IService.list(IService.java:370)
+	at com.baomidou.mybatisplus.extension.service.IService.list(IService.java:379)
+	at com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy.invokeMethod(CglibAopProxy.java:386)
+	at org.springframework.aop.framework.CglibAopProxy.access$000(CglibAopProxy.java:85)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:704)
+	at com.cern.springboottest1.service.AccountServiceImpl$$EnhancerBySpringCGLIB$$8822c0fb.list(<generated>)
+	at com.cern.springboottest1.controller.UserRestController.getAllAccount(UserRestController.java:23)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:529)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:337)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:96)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:122)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:109)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:141)
+	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:97)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:223)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:217)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:117)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:112)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:82)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:221)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:186)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:354)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+2023-08-08 09:48:54.561  INFO 17876 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-0} closing ...
+2023-08-08 09:48:58.729  INFO 14944 --- [main] c.c.s.SpringbootTest1Application         : Starting SpringbootTest1Application using Java 1.8.0_172 on LAPTOP-OLDO6QSR with PID 14944 (D:\WorkspacesIDEA\svn\springboot-test1\target\classes started by lenovo in D:\WorkspacesIDEA\svn\springboot-test1)
+2023-08-08 09:48:58.733  INFO 14944 --- [main] c.c.s.SpringbootTest1Application         : The following 1 profile is active: "dev"
+2023-08-08 09:48:59.446  INFO 14944 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-08-08 09:48:59.449  INFO 14944 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-08-08 09:48:59.476  INFO 14944 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+2023-08-08 09:49:00.147  INFO 14944 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-08-08 09:49:00.161  INFO 14944 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-08 09:49:00.161  INFO 14944 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+2023-08-08 09:49:00.336  INFO 14944 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-08 09:49:00.336  INFO 14944 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1549 ms
+2023-08-08 09:49:01.501  WARN 14944 --- [main] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "com.cern.springboottest1.domain.Account"
+2023-08-08 09:49:01.824  INFO 14944 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-08-08 09:49:02.230  INFO 14944 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1aeff8ca, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7f2c995b, org.springframework.security.web.context.SecurityContextPersistenceFilter@466fedfa, org.springframework.security.web.header.HeaderWriterFilter@65db548, org.springframework.security.web.csrf.CsrfFilter@cae2a97, org.springframework.security.web.authentication.logout.LogoutFilter@4ae49387, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2b5f8e61, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2b1a901d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7d3c22a5, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@73b0ed03, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@101c15ad, org.springframework.security.web.session.SessionManagementFilter@6e364f1f, org.springframework.security.web.access.ExceptionTranslationFilter@dae5e0, org.springframework.security.web.access.intercept.AuthorizationFilter@6728370a]
+2023-08-08 09:49:02.309  INFO 14944 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-08-08 09:49:02.322  INFO 14944 --- [main] c.c.s.SpringbootTest1Application         : Started SpringbootTest1Application in 4.244 seconds (JVM running for 5.241)
+2023-08-08 09:49:51.095  INFO 14944 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-08 09:49:51.095  INFO 14944 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-08-08 09:49:51.096  INFO 14944 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-08-08 09:49:51.243  INFO 14944 --- [http-nio-8080-exec-1] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-08-08 09:49:53.617  WARN 14944 --- [http-nio-8080-exec-3] o.apache.ibatis.io.SerialFilterChecker   : As you are using functionality that deserializes object streams, it is recommended to define the JEP-290 serial filter. Please refer to https://docs.oracle.com/pls/topic/lookup?ctx=javase15&id=GUID-8296D8E8-2B93-4B9A-856E-0A65AF9B8C66
+2023-08-08 09:53:13.715 ERROR 14944 --- [http-nio-8080-exec-7] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
+
+java.lang.NullPointerException: null
+	at com.baomidou.mybatisplus.extension.service.IService.list(IService.java:370)
+	at com.baomidou.mybatisplus.extension.service.IService.list(IService.java:379)
+	at com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy.invokeMethod(CglibAopProxy.java:386)
+	at org.springframework.aop.framework.CglibAopProxy.access$000(CglibAopProxy.java:85)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:704)
+	at com.cern.springboottest1.service.AccountServiceImpl$$EnhancerBySpringCGLIB$$cf659a29.list(<generated>)
+	at com.cern.springboottest1.controller.UserRestController.queryById(UserRestController.java:33)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:529)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:337)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:96)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:122)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:109)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:141)
+	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:97)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:223)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:217)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:117)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:112)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:82)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:221)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:186)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:354)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+2023-08-08 09:53:19.340 ERROR 14944 --- [http-nio-8080-exec-7] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
+
+java.lang.NullPointerException: null
+	at com.baomidou.mybatisplus.extension.service.IService.list(IService.java:370)
+	at com.baomidou.mybatisplus.extension.service.IService.list(IService.java:379)
+	at com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy.invokeMethod(CglibAopProxy.java:386)
+	at org.springframework.aop.framework.CglibAopProxy.access$000(CglibAopProxy.java:85)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:704)
+	at com.cern.springboottest1.service.AccountServiceImpl$$EnhancerBySpringCGLIB$$cf659a29.list(<generated>)
+	at com.cern.springboottest1.controller.UserRestController.queryById(UserRestController.java:33)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:529)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:337)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:96)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:122)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:109)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:141)
+	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:97)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:223)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:217)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:117)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:112)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:82)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:221)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:186)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:354)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+2023-08-08 09:54:01.994  INFO 14944 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-08-08 09:54:01.997  INFO 14944 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-08-08 09:54:50.931  INFO 11980 --- [main] c.c.s.SpringbootTest1Application         : Starting SpringbootTest1Application using Java 1.8.0_172 on LAPTOP-OLDO6QSR with PID 11980 (D:\WorkspacesIDEA\svn\springboot-test1\target\classes started by lenovo in D:\WorkspacesIDEA\svn\springboot-test1)
+2023-08-08 09:54:50.934  INFO 11980 --- [main] c.c.s.SpringbootTest1Application         : The following 1 profile is active: "dev"
+2023-08-08 09:54:51.611  INFO 11980 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-08-08 09:54:51.614  INFO 11980 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-08-08 09:54:51.640  INFO 11980 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2023-08-08 09:54:52.214  INFO 11980 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-08-08 09:54:52.223  INFO 11980 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-08 09:54:52.224  INFO 11980 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+2023-08-08 09:54:52.386  INFO 11980 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-08 09:54:52.387  INFO 11980 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1404 ms
+2023-08-08 09:54:53.611  WARN 11980 --- [main] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "com.cern.springboottest1.domain.Account"
+2023-08-08 09:54:53.932  INFO 11980 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-08-08 09:54:54.318  INFO 11980 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@18d610e1, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@528e5e38, org.springframework.security.web.context.SecurityContextPersistenceFilter@2a631049, org.springframework.security.web.header.HeaderWriterFilter@20be890d, org.springframework.security.web.csrf.CsrfFilter@5a51336a, org.springframework.security.web.authentication.logout.LogoutFilter@4fa8bebb, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4269aad7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3eec8583, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@150f41b9, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@71e7830a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@16391278, org.springframework.security.web.session.SessionManagementFilter@534762ed, org.springframework.security.web.access.ExceptionTranslationFilter@32d0d7eb, org.springframework.security.web.access.intercept.AuthorizationFilter@222d9d4f]
+2023-08-08 09:54:54.399  INFO 11980 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-08-08 09:54:54.413  INFO 11980 --- [main] c.c.s.SpringbootTest1Application         : Started SpringbootTest1Application in 4.063 seconds (JVM running for 5.061)
+2023-08-08 09:54:57.175  INFO 11980 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-08 09:54:57.175  INFO 11980 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-08-08 09:54:57.177  INFO 11980 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-08-08 09:54:59.703  INFO 11980 --- [http-nio-8080-exec-2] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-08-08 10:21:17.038  INFO 11980 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-08-08 10:21:17.043  INFO 11980 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-08-08 15:45:40.067  INFO 2876 --- [main] c.c.s.SpringbootTest1Application         : Starting SpringbootTest1Application using Java 1.8.0_172 on LAPTOP-OLDO6QSR with PID 2876 (D:\WorkspacesIDEA\svn\springboot-test1\target\classes started by lenovo in D:\WorkspacesIDEA\svn\springboot-test1)
+2023-08-08 15:45:40.070  INFO 2876 --- [main] c.c.s.SpringbootTest1Application         : The following 1 profile is active: "dev"
+2023-08-08 15:45:40.795  INFO 2876 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-08-08 15:45:40.798  INFO 2876 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-08-08 15:45:40.827  INFO 2876 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+2023-08-08 15:45:41.542  INFO 2876 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-08-08 15:45:41.552  INFO 2876 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-08 15:45:41.552  INFO 2876 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+2023-08-08 15:45:41.709  INFO 2876 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-08 15:45:41.709  INFO 2876 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1589 ms
+2023-08-08 15:45:42.877  WARN 2876 --- [main] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "com.cern.springboottest1.domain.Account"
+2023-08-08 15:45:43.209  INFO 2876 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-08-08 15:45:43.593  INFO 2876 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@61dd1c3d, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7858d31d, org.springframework.security.web.context.SecurityContextPersistenceFilter@405d8a80, org.springframework.security.web.header.HeaderWriterFilter@6463da36, org.springframework.security.web.csrf.CsrfFilter@5a6195b8, org.springframework.security.web.authentication.logout.LogoutFilter@ba562e0, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7e50eeb9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6afeaf2d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4537880f, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@48b2dbc4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@782e6b40, org.springframework.security.web.session.SessionManagementFilter@1c6ac73c, org.springframework.security.web.access.ExceptionTranslationFilter@13c90c06, org.springframework.security.web.access.intercept.AuthorizationFilter@312a738d]
+2023-08-08 15:45:43.665  INFO 2876 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-08-08 15:45:43.677  INFO 2876 --- [main] c.c.s.SpringbootTest1Application         : Started SpringbootTest1Application in 4.184 seconds (JVM running for 5.186)
+2023-08-08 15:46:36.874  INFO 2876 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-0} closing ...
+2023-08-08 15:49:34.553  INFO 17700 --- [main] c.c.s.SpringbootTest1Application         : Starting SpringbootTest1Application using Java 1.8.0_172 on LAPTOP-OLDO6QSR with PID 17700 (D:\WorkspacesIDEA\svn\springboot-test1\target\classes started by lenovo in D:\WorkspacesIDEA\svn\springboot-test1)
+2023-08-08 15:49:34.556  INFO 17700 --- [main] c.c.s.SpringbootTest1Application         : The following 1 profile is active: "dev"
+2023-08-08 15:49:35.248  INFO 17700 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-08-08 15:49:35.250  INFO 17700 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-08-08 15:49:35.278  INFO 17700 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+2023-08-08 15:49:35.858  INFO 17700 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-08-08 15:49:35.867  INFO 17700 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-08 15:49:35.868  INFO 17700 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+2023-08-08 15:49:36.017  INFO 17700 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-08 15:49:36.018  INFO 17700 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1412 ms
+2023-08-08 15:49:36.493  WARN 17700 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'securityConfiguration': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userAuthService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userMapper' defined in file [D:\WorkspacesIDEA\svn\springboot-test1\target\classes\com\cern\springboottest1\mapper\UserMapper.class]: Cannot resolve reference to bean 'sqlSessionTemplate' while setting bean property 'sqlSessionTemplate'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSessionTemplate' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Unsatisfied dependency expressed through method 'sqlSessionTemplate' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Generic.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'dataSource' threw exception; nested exception is org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$DataSourceBeanCreationException: Failed to determine suitable jdbc url
+2023-08-08 15:49:36.510  INFO 17700 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-08-08 15:49:36.529  INFO 17700 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-08-08 15:49:36.557 ERROR 17700 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
+
+Reason: Failed to determine suitable jdbc url
+
+
+Action:
+
+Consider the following:
+	If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
+	If you have database settings to be loaded from a particular profile you may need to activate it (the profiles dev are currently active).
+
+2023-08-08 15:50:07.107  INFO 2356 --- [main] c.c.s.SpringbootTest1Application         : Starting SpringbootTest1Application using Java 1.8.0_172 on LAPTOP-OLDO6QSR with PID 2356 (D:\WorkspacesIDEA\svn\springboot-test1\target\classes started by lenovo in D:\WorkspacesIDEA\svn\springboot-test1)
+2023-08-08 15:50:07.111  INFO 2356 --- [main] c.c.s.SpringbootTest1Application         : The following 1 profile is active: "dev"
+2023-08-08 15:50:07.797  INFO 2356 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-08-08 15:50:07.800  INFO 2356 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-08-08 15:50:07.827  INFO 2356 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+2023-08-08 15:50:08.405  INFO 2356 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-08-08 15:50:08.414  INFO 2356 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-08 15:50:08.414  INFO 2356 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+2023-08-08 15:50:08.565  INFO 2356 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-08 15:50:08.565  INFO 2356 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1407 ms
+2023-08-08 15:50:09.643  WARN 2356 --- [main] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "com.cern.springboottest1.domain.Account"
+2023-08-08 15:50:09.919  INFO 2356 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-08-08 15:50:10.281  INFO 2356 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7e50eeb9, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@34cb0e49, org.springframework.security.web.context.SecurityContextPersistenceFilter@3f1158ee, org.springframework.security.web.header.HeaderWriterFilter@29d2fa84, org.springframework.security.web.csrf.CsrfFilter@386e9fd8, org.springframework.security.web.authentication.logout.LogoutFilter@32a033b6, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@ba562e0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4a4b288a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@283baa39, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@4d8056bf, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@48b2dbc4, org.springframework.security.web.session.SessionManagementFilter@13c90c06, org.springframework.security.web.access.ExceptionTranslationFilter@5464b97c, org.springframework.security.web.access.intercept.AuthorizationFilter@1d1cfe4]
+2023-08-08 15:50:10.354  INFO 2356 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-08-08 15:50:10.366  INFO 2356 --- [main] c.c.s.SpringbootTest1Application         : Started SpringbootTest1Application in 3.819 seconds (JVM running for 4.852)
+2023-08-08 15:51:39.711  INFO 2356 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-0} closing ...
+2023-08-08 15:51:48.441  INFO 11424 --- [main] c.c.s.SpringbootTest1Application         : Starting SpringbootTest1Application using Java 1.8.0_172 on LAPTOP-OLDO6QSR with PID 11424 (D:\WorkspacesIDEA\svn\springboot-test1\target\classes started by lenovo in D:\WorkspacesIDEA\svn\springboot-test1)
+2023-08-08 15:51:48.444  INFO 11424 --- [main] c.c.s.SpringbootTest1Application         : The following 1 profile is active: "dev"
+2023-08-08 15:51:49.153  INFO 11424 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-08-08 15:51:49.156  INFO 11424 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-08-08 15:51:49.187  INFO 11424 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 0 Redis repository interfaces.
+2023-08-08 15:51:49.846  INFO 11424 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-08-08 15:51:49.857  INFO 11424 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-08 15:51:49.857  INFO 11424 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+2023-08-08 15:51:50.019  INFO 11424 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-08 15:51:50.020  INFO 11424 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1525 ms
+2023-08-08 15:51:51.091  WARN 11424 --- [main] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "com.cern.springboottest1.domain.Account"
+2023-08-08 15:51:51.368  INFO 11424 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-08-08 15:51:51.734  INFO 11424 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@34cb0e49, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@48b2dbc4, org.springframework.security.web.context.SecurityContextPersistenceFilter@6463da36, org.springframework.security.web.header.HeaderWriterFilter@4540c7, org.springframework.security.web.csrf.CsrfFilter@618f627b, org.springframework.security.web.authentication.logout.LogoutFilter@5f6e2ad9, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5a51336a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1c6ac73c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@416b1265, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@42211e04, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2a667f44, org.springframework.security.web.session.SessionManagementFilter@2bc0b8c8, org.springframework.security.web.access.ExceptionTranslationFilter@3355168, org.springframework.security.web.access.intercept.AuthorizationFilter@ba562e0]
+2023-08-08 15:51:51.808  INFO 11424 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-08-08 15:51:51.820  INFO 11424 --- [main] c.c.s.SpringbootTest1Application         : Started SpringbootTest1Application in 3.972 seconds (JVM running for 5.049)
+2023-08-08 15:54:19.517  INFO 11424 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-08 15:54:19.517  INFO 11424 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-08-08 15:54:19.518  INFO 11424 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-08-08 15:59:56.121  INFO 11424 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-0} closing ...
+2023-08-08 16:00:06.706  INFO 11948 --- [main] c.c.s.SpringbootTest1Application         : Starting SpringbootTest1Application using Java 1.8.0_172 on LAPTOP-OLDO6QSR with PID 11948 (D:\WorkspacesIDEA\svn\springboot-test1\target\classes started by lenovo in D:\WorkspacesIDEA\svn\springboot-test1)
+2023-08-08 16:00:06.709  INFO 11948 --- [main] c.c.s.SpringbootTest1Application         : The following 1 profile is active: "dev"
+2023-08-08 16:00:07.435  INFO 11948 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-08-08 16:00:07.438  INFO 11948 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-08-08 16:00:07.467  INFO 11948 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+2023-08-08 16:00:08.071  INFO 11948 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-08-08 16:00:08.081  INFO 11948 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-08 16:00:08.081  INFO 11948 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+2023-08-08 16:00:08.250  INFO 11948 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-08 16:00:08.251  INFO 11948 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1494 ms
+2023-08-08 16:00:09.399  WARN 11948 --- [main] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "com.cern.springboottest1.domain.Account"
+2023-08-08 16:00:09.699  INFO 11948 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-08-08 16:00:10.098  INFO 11948 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@38e00b47, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2a631049, org.springframework.security.web.context.SecurityContextPersistenceFilter@4537880f, org.springframework.security.web.header.HeaderWriterFilter@416b1265, org.springframework.security.web.csrf.CsrfFilter@580c17a0, org.springframework.security.web.authentication.logout.LogoutFilter@61dd1c3d, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7d12429, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@48e74764, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1cc9bd9b, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@20be890d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@425b5fe2, org.springframework.security.web.session.SessionManagementFilter@da22aa, org.springframework.security.web.access.ExceptionTranslationFilter@365bfc5f, org.springframework.security.web.access.intercept.AuthorizationFilter@cae2a97]
+2023-08-08 16:00:10.178  INFO 11948 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-08-08 16:00:10.191  INFO 11948 --- [main] c.c.s.SpringbootTest1Application         : Started SpringbootTest1Application in 4.059 seconds (JVM running for 5.146)
+2023-08-08 16:00:28.704  INFO 11948 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-08 16:00:28.704  INFO 11948 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-08-08 16:00:28.705  INFO 11948 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-08-08 16:08:14.283  INFO 11948 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-0} closing ...
+2023-08-08 16:08:19.784  INFO 19592 --- [main] c.c.s.SpringbootTest1Application         : Starting SpringbootTest1Application using Java 1.8.0_172 on LAPTOP-OLDO6QSR with PID 19592 (D:\WorkspacesIDEA\svn\springboot-test1\target\classes started by lenovo in D:\WorkspacesIDEA\svn\springboot-test1)
+2023-08-08 16:08:19.787  INFO 19592 --- [main] c.c.s.SpringbootTest1Application         : The following 1 profile is active: "dev"
+2023-08-08 16:08:20.509  INFO 19592 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-08-08 16:08:20.511  INFO 19592 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-08-08 16:08:20.541  INFO 19592 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+2023-08-08 16:08:21.192  INFO 19592 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-08-08 16:08:21.202  INFO 19592 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-08 16:08:21.203  INFO 19592 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+2023-08-08 16:08:21.360  INFO 19592 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-08 16:08:21.360  INFO 19592 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1522 ms
+2023-08-08 16:08:22.496  WARN 19592 --- [main] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "com.cern.springboottest1.domain.Account"
+2023-08-08 16:08:22.803  INFO 19592 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-08-08 16:08:23.191  INFO 19592 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@14656be5, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@20be890d, org.springframework.security.web.context.SecurityContextPersistenceFilter@416b1265, org.springframework.security.web.header.HeaderWriterFilter@6afeaf2d, org.springframework.security.web.csrf.CsrfFilter@4cfc0c48, org.springframework.security.web.authentication.logout.LogoutFilter@34cb0e49, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7858d31d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@da22aa, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@10d98940, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@3b65084e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5db9f51f, org.springframework.security.web.session.SessionManagementFilter@1a7e799e, org.springframework.security.web.access.ExceptionTranslationFilter@29892a77, org.springframework.security.web.access.intercept.AuthorizationFilter@61dd1c3d]
+2023-08-08 16:08:23.273  INFO 19592 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-08-08 16:08:23.286  INFO 19592 --- [main] c.c.s.SpringbootTest1Application         : Started SpringbootTest1Application in 4.133 seconds (JVM running for 5.19)
+2023-08-08 16:08:36.294  INFO 19592 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-08 16:08:36.294  INFO 19592 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-08-08 16:08:36.296  INFO 19592 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-08-08 16:31:30.612  INFO 19592 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-0} closing ...
+2023-08-08 16:31:36.818  INFO 12284 --- [main] c.c.s.SpringbootTest1Application         : Starting SpringbootTest1Application using Java 1.8.0_172 on LAPTOP-OLDO6QSR with PID 12284 (D:\WorkspacesIDEA\svn\springboot-test1\target\classes started by lenovo in D:\WorkspacesIDEA\svn\springboot-test1)
+2023-08-08 16:31:36.821  INFO 12284 --- [main] c.c.s.SpringbootTest1Application         : The following 1 profile is active: "dev"
+2023-08-08 16:31:37.553  INFO 12284 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-08-08 16:31:37.556  INFO 12284 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-08-08 16:31:37.585  INFO 12284 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+2023-08-08 16:31:38.251  INFO 12284 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-08-08 16:31:38.265  INFO 12284 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-08 16:31:38.265  INFO 12284 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+2023-08-08 16:31:38.444  INFO 12284 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-08 16:31:38.444  INFO 12284 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1572 ms
+2023-08-08 16:31:39.742  WARN 12284 --- [main] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "com.cern.springboottest1.domain.Account"
+2023-08-08 16:31:40.106  INFO 12284 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-08-08 16:31:40.580  INFO 12284 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@517fbf62, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@65db548, org.springframework.security.web.context.SecurityContextPersistenceFilter@3212bfd, org.springframework.security.web.header.HeaderWriterFilter@55071497, org.springframework.security.web.csrf.CsrfFilter@5341e71a, org.springframework.security.web.authentication.logout.LogoutFilter@6c421123, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@343db2f6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2f471037, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@48b2dbc4, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@769b0752, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@150f41b9, org.springframework.security.web.session.SessionManagementFilter@58b8f9e3, org.springframework.security.web.access.ExceptionTranslationFilter@48e74764, org.springframework.security.web.access.intercept.AuthorizationFilter@66e1b2a]
+2023-08-08 16:31:40.669  INFO 12284 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-08-08 16:31:40.684  INFO 12284 --- [main] c.c.s.SpringbootTest1Application         : Started SpringbootTest1Application in 4.442 seconds (JVM running for 5.523)
+2023-08-08 16:32:32.856  INFO 12284 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-0} closing ...
+2023-08-08 16:32:51.020  INFO 16768 --- [main] c.c.s.SpringbootTest1Application         : Starting SpringbootTest1Application using Java 1.8.0_172 on LAPTOP-OLDO6QSR with PID 16768 (D:\WorkspacesIDEA\svn\springboot-test1\target\classes started by lenovo in D:\WorkspacesIDEA\svn\springboot-test1)
+2023-08-08 16:32:51.024  INFO 16768 --- [main] c.c.s.SpringbootTest1Application         : The following 1 profile is active: "dev"
+2023-08-08 16:32:51.707  INFO 16768 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-08-08 16:32:51.710  INFO 16768 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-08-08 16:32:51.736  INFO 16768 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2023-08-08 16:32:52.322  INFO 16768 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-08-08 16:32:52.331  INFO 16768 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-08 16:32:52.332  INFO 16768 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+2023-08-08 16:32:52.499  INFO 16768 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-08 16:32:52.499  INFO 16768 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1426 ms
+2023-08-08 16:32:53.553  WARN 16768 --- [main] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "com.cern.springboottest1.domain.Account"
+2023-08-08 16:32:53.833  INFO 16768 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-08-08 16:32:54.202  INFO 16768 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2a667f44, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@53ba7997, org.springframework.security.web.context.SecurityContextPersistenceFilter@1c6ac73c, org.springframework.security.web.header.HeaderWriterFilter@2bc0b8c8, org.springframework.security.web.csrf.CsrfFilter@3e2d8623, org.springframework.security.web.authentication.logout.LogoutFilter@1cc9bd9b, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@42211e04, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5341e71a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@da22aa, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@312a738d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3f6f9cef, org.springframework.security.web.session.SessionManagementFilter@3f1158ee, org.springframework.security.web.access.ExceptionTranslationFilter@580c17a0, org.springframework.security.web.access.intercept.AuthorizationFilter@4d8056bf]
+2023-08-08 16:32:54.274  INFO 16768 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-08-08 16:32:54.287  INFO 16768 --- [main] c.c.s.SpringbootTest1Application         : Started SpringbootTest1Application in 3.844 seconds (JVM running for 4.889)
+2023-08-08 16:32:58.347  INFO 16768 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-08 16:32:58.347  INFO 16768 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-08-08 16:32:58.348  INFO 16768 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-08-08 16:34:00.208  INFO 16768 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-0} closing ...
+2023-08-08 16:35:21.259  INFO 3340 --- [main] c.c.s.SpringbootTest1Application         : Starting SpringbootTest1Application using Java 1.8.0_172 on LAPTOP-OLDO6QSR with PID 3340 (D:\WorkspacesIDEA\svn\springboot-test1\target\classes started by lenovo in D:\WorkspacesIDEA\svn\springboot-test1)
+2023-08-08 16:35:21.262  INFO 3340 --- [main] c.c.s.SpringbootTest1Application         : The following 1 profile is active: "dev"
+2023-08-08 16:35:21.948  INFO 3340 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-08-08 16:35:21.950  INFO 3340 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-08-08 16:35:21.978  INFO 3340 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+2023-08-08 16:35:22.565  INFO 3340 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-08-08 16:35:22.575  INFO 3340 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-08 16:35:22.575  INFO 3340 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+2023-08-08 16:35:22.733  INFO 3340 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-08 16:35:22.733  INFO 3340 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1424 ms
+2023-08-08 16:35:23.833  WARN 3340 --- [main] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "com.cern.springboottest1.domain.Account"
+2023-08-08 16:35:24.103  INFO 3340 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-08-08 16:35:24.457  INFO 3340 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5a466dd, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1ed9d173, org.springframework.security.web.context.SecurityContextPersistenceFilter@280484c7, org.springframework.security.web.header.HeaderWriterFilter@298263fa, org.springframework.security.web.csrf.CsrfFilter@5db9f51f, org.springframework.security.web.authentication.logout.LogoutFilter@56f9de3b, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@27db45f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@258a8584, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@222d9d4f, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@1aeff8ca, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6e981e78, org.springframework.security.web.session.SessionManagementFilter@1a7d0c9f, org.springframework.security.web.access.ExceptionTranslationFilter@65db548, org.springframework.security.web.access.intercept.AuthorizationFilter@55061418]
+2023-08-08 16:35:24.533  INFO 3340 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-08-08 16:35:24.546  INFO 3340 --- [main] c.c.s.SpringbootTest1Application         : Started SpringbootTest1Application in 3.864 seconds (JVM running for 4.883)
+2023-08-08 16:35:45.475  INFO 3340 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-0} closing ...
+2023-08-08 16:35:51.071  INFO 17264 --- [main] c.c.s.SpringbootTest1Application         : Starting SpringbootTest1Application using Java 1.8.0_172 on LAPTOP-OLDO6QSR with PID 17264 (D:\WorkspacesIDEA\svn\springboot-test1\target\classes started by lenovo in D:\WorkspacesIDEA\svn\springboot-test1)
+2023-08-08 16:35:51.075  INFO 17264 --- [main] c.c.s.SpringbootTest1Application         : The following 1 profile is active: "dev"
+2023-08-08 16:35:51.814  INFO 17264 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-08-08 16:35:51.817  INFO 17264 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-08-08 16:35:51.846  INFO 17264 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+2023-08-08 16:35:52.442  INFO 17264 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-08-08 16:35:52.452  INFO 17264 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-08 16:35:52.452  INFO 17264 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+2023-08-08 16:35:52.610  INFO 17264 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-08 16:35:52.610  INFO 17264 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1480 ms
+2023-08-08 16:35:53.744  WARN 17264 --- [main] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "com.cern.springboottest1.domain.Account"
+2023-08-08 16:35:54.040  INFO 17264 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-08-08 16:35:54.433  INFO 17264 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@a120b9, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@333e5fb6, org.springframework.security.web.context.SecurityContextPersistenceFilter@6cc8adff, org.springframework.security.web.header.HeaderWriterFilter@1e5aacd9, org.springframework.security.web.csrf.CsrfFilter@4d825dbe, org.springframework.security.web.authentication.logout.LogoutFilter@7e38e254, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@35329a05, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@280d5a82, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2976ca51, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@17136390, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3b7b0b57, org.springframework.security.web.session.SessionManagementFilter@f810c18, org.springframework.security.web.access.ExceptionTranslationFilter@67ceeffd, org.springframework.security.web.access.intercept.AuthorizationFilter@6dcbbb49]
+2023-08-08 16:35:54.514  INFO 17264 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-08-08 16:35:54.528  INFO 17264 --- [main] c.c.s.SpringbootTest1Application         : Started SpringbootTest1Application in 4.067 seconds (JVM running for 5.114)
+2023-08-08 16:36:03.121  INFO 17264 --- [http-nio-8080-exec-6] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-08 16:36:03.121  INFO 17264 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-08-08 16:36:03.122  INFO 17264 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-08-08 16:37:55.042  INFO 17264 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-0} closing ...
+2023-08-08 16:37:59.955  INFO 4968 --- [main] c.c.s.SpringbootTest1Application         : Starting SpringbootTest1Application using Java 1.8.0_172 on LAPTOP-OLDO6QSR with PID 4968 (D:\WorkspacesIDEA\svn\springboot-test1\target\classes started by lenovo in D:\WorkspacesIDEA\svn\springboot-test1)
+2023-08-08 16:37:59.958  INFO 4968 --- [main] c.c.s.SpringbootTest1Application         : The following 1 profile is active: "dev"
+2023-08-08 16:38:00.685  INFO 4968 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-08-08 16:38:00.688  INFO 4968 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-08-08 16:38:00.715  INFO 4968 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+2023-08-08 16:38:01.307  INFO 4968 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-08-08 16:38:01.317  INFO 4968 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-08 16:38:01.317  INFO 4968 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+2023-08-08 16:38:01.469  INFO 4968 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-08 16:38:01.469  INFO 4968 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1464 ms
+2023-08-08 16:38:02.802  WARN 4968 --- [main] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "com.cern.springboottest1.domain.Account"
+2023-08-08 16:38:03.111  INFO 4968 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-08-08 16:38:03.540  INFO 4968 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@69a90b81, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6dcbbb49, org.springframework.security.web.context.SecurityContextPersistenceFilter@3fc1abf, org.springframework.security.web.header.HeaderWriterFilter@1ad1b737, org.springframework.security.web.csrf.CsrfFilter@5d96d434, org.springframework.security.web.authentication.logout.LogoutFilter@64f3991e, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1cc93da4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@e7b0bec, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@333a44f2, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@7e38e254, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@35329a05, org.springframework.security.web.session.SessionManagementFilter@77d0dbba, org.springframework.security.web.access.ExceptionTranslationFilter@144e36ae, org.springframework.security.web.access.intercept.AuthorizationFilter@1de30c31]
+2023-08-08 16:38:03.622  INFO 4968 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-08-08 16:38:03.635  INFO 4968 --- [main] c.c.s.SpringbootTest1Application         : Started SpringbootTest1Application in 4.356 seconds (JVM running for 5.369)
+2023-08-08 16:38:10.437  INFO 4968 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-08 16:38:10.437  INFO 4968 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-08-08 16:38:10.438  INFO 4968 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-08-08 16:43:30.731  INFO 4968 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-0} closing ...
+2023-08-08 17:04:28.817  INFO 14776 --- [main] c.c.s.SpringbootTest1Application         : Starting SpringbootTest1Application using Java 1.8.0_172 on LAPTOP-OLDO6QSR with PID 14776 (D:\WorkspacesIDEA\svn\springboot-test1\target\classes started by lenovo in D:\WorkspacesIDEA\svn\springboot-test1)
+2023-08-08 17:04:28.820  INFO 14776 --- [main] c.c.s.SpringbootTest1Application         : The following 1 profile is active: "dev"
+2023-08-08 17:04:29.529  INFO 14776 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-08-08 17:04:29.532  INFO 14776 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-08-08 17:04:29.562  INFO 14776 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+2023-08-08 17:04:30.173  INFO 14776 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-08-08 17:04:30.182  INFO 14776 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-08 17:04:30.183  INFO 14776 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+2023-08-08 17:04:30.350  INFO 14776 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-08 17:04:30.351  INFO 14776 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1483 ms
+2023-08-08 17:04:31.493  WARN 14776 --- [main] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "com.cern.springboottest1.domain.Account"
+2023-08-08 17:04:31.783  INFO 14776 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-08-08 17:04:32.159  INFO 14776 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@21a9f95b, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2804b13f, org.springframework.security.web.context.SecurityContextPersistenceFilter@1a34a51e, org.springframework.security.web.header.HeaderWriterFilter@59f3426f, org.springframework.security.web.csrf.CsrfFilter@63814bbe, org.springframework.security.web.authentication.logout.LogoutFilter@503a7990, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@273293c8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2c668c2a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1de08775, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@ca2cd5e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@69069866, org.springframework.security.web.session.SessionManagementFilter@6cc8adff, org.springframework.security.web.access.ExceptionTranslationFilter@e7b0bec, org.springframework.security.web.access.intercept.AuthorizationFilter@17136390]
+2023-08-08 17:04:32.240  INFO 14776 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-08-08 17:04:32.253  INFO 14776 --- [main] c.c.s.SpringbootTest1Application         : Started SpringbootTest1Application in 3.944 seconds (JVM running for 5.598)
+2023-08-08 17:05:54.658  INFO 14776 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-0} closing ...
+2023-08-08 17:06:29.046  INFO 15808 --- [main] c.c.s.SpringbootTest1Application         : Starting SpringbootTest1Application using Java 1.8.0_172 on LAPTOP-OLDO6QSR with PID 15808 (D:\WorkspacesIDEA\svn\springboot-test1\target\classes started by lenovo in D:\WorkspacesIDEA\svn\springboot-test1)
+2023-08-08 17:06:29.050  INFO 15808 --- [main] c.c.s.SpringbootTest1Application         : The following 1 profile is active: "dev"
+2023-08-08 17:06:29.753  INFO 15808 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-08-08 17:06:29.755  INFO 15808 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-08-08 17:06:29.783  INFO 15808 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+2023-08-08 17:06:30.379  INFO 15808 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-08-08 17:06:30.388  INFO 15808 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-08 17:06:30.388  INFO 15808 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+2023-08-08 17:06:30.544  INFO 15808 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-08 17:06:30.545  INFO 15808 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1448 ms
+2023-08-08 17:06:31.738  WARN 15808 --- [main] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "com.cern.springboottest1.domain.Account"
+2023-08-08 17:06:32.023  INFO 15808 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-08-08 17:06:32.406  INFO 15808 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@429e7914, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@298263fa, org.springframework.security.web.context.SecurityContextPersistenceFilter@ba562e0, org.springframework.security.web.header.HeaderWriterFilter@5f6e2ad9, org.springframework.security.web.csrf.CsrfFilter@365bfc5f, org.springframework.security.web.authentication.logout.LogoutFilter@3eec8583, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@59a94d0f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4d8056bf, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@61dd1c3d, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@517fbf62, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@466fedfa, org.springframework.security.web.session.SessionManagementFilter@1cc9bd9b, org.springframework.security.web.access.ExceptionTranslationFilter@55071497, org.springframework.security.web.access.intercept.AuthorizationFilter@dae5e0]
+2023-08-08 17:06:32.483  INFO 15808 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-08-08 17:06:32.497  INFO 15808 --- [main] c.c.s.SpringbootTest1Application         : Started SpringbootTest1Application in 4.023 seconds (JVM running for 5.111)
+2023-08-08 17:06:48.462  INFO 15808 --- [http-nio-8080-exec-6] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-08 17:06:48.463  INFO 15808 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-08-08 17:06:48.464  INFO 15808 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-08-08 17:10:07.681  INFO 15808 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-0} closing ...
+2023-08-08 17:10:55.696  INFO 18428 --- [main] c.c.s.SpringbootTest1Application         : Starting SpringbootTest1Application using Java 1.8.0_172 on LAPTOP-OLDO6QSR with PID 18428 (D:\WorkspacesIDEA\svn\springboot-test1\target\classes started by lenovo in D:\WorkspacesIDEA\svn\springboot-test1)
+2023-08-08 17:10:55.700  INFO 18428 --- [main] c.c.s.SpringbootTest1Application         : The following 1 profile is active: "dev"
+2023-08-08 17:10:56.526  INFO 18428 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-08-08 17:10:56.529  INFO 18428 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-08-08 17:10:56.560  INFO 18428 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+2023-08-08 17:10:57.290  INFO 18428 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-08-08 17:10:57.301  INFO 18428 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-08 17:10:57.301  INFO 18428 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+2023-08-08 17:10:57.463  INFO 18428 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-08 17:10:57.463  INFO 18428 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1700 ms
+2023-08-08 17:10:58.659  WARN 18428 --- [main] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "com.cern.springboottest1.domain.Account"
+2023-08-08 17:10:58.959  INFO 18428 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-08-08 17:10:59.337  INFO 18428 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@429e7914, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@298263fa, org.springframework.security.web.context.SecurityContextPersistenceFilter@ba562e0, org.springframework.security.web.header.HeaderWriterFilter@5f6e2ad9, org.springframework.security.web.csrf.CsrfFilter@365bfc5f, org.springframework.security.web.authentication.logout.LogoutFilter@3eec8583, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@59a94d0f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4d8056bf, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@61dd1c3d, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@517fbf62, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@466fedfa, org.springframework.security.web.session.SessionManagementFilter@1cc9bd9b, org.springframework.security.web.access.ExceptionTranslationFilter@55071497, org.springframework.security.web.access.intercept.AuthorizationFilter@dae5e0]
+2023-08-08 17:10:59.413  INFO 18428 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-08-08 17:10:59.425  INFO 18428 --- [main] c.c.s.SpringbootTest1Application         : Started SpringbootTest1Application in 4.435 seconds (JVM running for 5.524)
+2023-08-08 17:11:26.646  INFO 18428 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-08 17:11:26.647  INFO 18428 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-08-08 17:11:26.649  INFO 18428 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-08-08 17:11:39.866  INFO 18428 --- [http-nio-8080-exec-7] c.c.s.controller.UserController          : 登录日志 === Someone is logging to the system!!!
+2023-08-08 17:11:40.470  INFO 18428 --- [http-nio-8080-exec-7] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-08-08 17:12:11.411  INFO 18428 --- [http-nio-8080-exec-3] c.c.s.controller.UserController          : 登录日志 === Someone is logging to the system!!!
+2023-08-08 17:13:04.388  INFO 18428 --- [http-nio-8080-exec-5] c.c.s.controller.UserController          : 登录日志 === Someone is logging to the system!!!
+2023-08-08 17:13:09.109  INFO 18428 --- [http-nio-8080-exec-4] c.c.s.controller.UserController          : 登录日志 === Someone is logging to the system!!!
+2023-08-08 17:15:21.818  WARN 18428 --- [http-nio-8080-exec-9] o.apache.ibatis.io.SerialFilterChecker   : As you are using functionality that deserializes object streams, it is recommended to define the JEP-290 serial filter. Please refer to https://docs.oracle.com/pls/topic/lookup?ctx=javase15&id=GUID-8296D8E8-2B93-4B9A-856E-0A65AF9B8C66
+2023-08-08 17:15:42.541  INFO 18428 --- [http-nio-8080-exec-8] c.c.s.controller.UserController          : 登录日志 === Someone is logging to the system!!!
+2023-08-08 17:22:26.679  INFO 18428 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-08-08 17:22:26.682  INFO 18428 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-08-08 17:23:02.238  INFO 2408 --- [main] c.c.s.SpringbootTest1Application         : Starting SpringbootTest1Application using Java 1.8.0_172 on LAPTOP-OLDO6QSR with PID 2408 (D:\WorkspacesIDEA\svn\springboot-test1\target\classes started by lenovo in D:\WorkspacesIDEA\svn\springboot-test1)
+2023-08-08 17:23:02.242  INFO 2408 --- [main] c.c.s.SpringbootTest1Application         : The following 1 profile is active: "dev"
+2023-08-08 17:23:02.927  INFO 2408 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-08-08 17:23:02.929  INFO 2408 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-08-08 17:23:02.959  INFO 2408 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+2023-08-08 17:23:03.576  INFO 2408 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-08-08 17:23:03.586  INFO 2408 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-08 17:23:03.586  INFO 2408 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+2023-08-08 17:23:03.755  INFO 2408 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-08 17:23:03.755  INFO 2408 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1467 ms
+2023-08-08 17:23:04.926  WARN 2408 --- [main] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "com.cern.springboottest1.domain.Account"
+2023-08-08 17:23:05.237  INFO 2408 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-08-08 17:23:05.634  INFO 2408 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@69a90b81, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6dcbbb49, org.springframework.security.web.context.SecurityContextPersistenceFilter@3fc1abf, org.springframework.security.web.header.HeaderWriterFilter@1ad1b737, org.springframework.security.web.csrf.CsrfFilter@5d96d434, org.springframework.security.web.authentication.logout.LogoutFilter@64f3991e, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1cc93da4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@e7b0bec, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@333a44f2, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@7e38e254, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@35329a05, org.springframework.security.web.session.SessionManagementFilter@77d0dbba, org.springframework.security.web.access.ExceptionTranslationFilter@144e36ae, org.springframework.security.web.access.intercept.AuthorizationFilter@1de30c31]
+2023-08-08 17:23:05.710  INFO 2408 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-08-08 17:23:05.723  INFO 2408 --- [main] c.c.s.SpringbootTest1Application         : Started SpringbootTest1Application in 4.039 seconds (JVM running for 5.098)
+2023-08-08 17:23:20.324  INFO 2408 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-08 17:23:20.324  INFO 2408 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-08-08 17:23:20.326  INFO 2408 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-08-08 17:23:20.454  INFO 2408 --- [http-nio-8080-exec-1] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-08-08 17:23:37.234  WARN 2408 --- [http-nio-8080-exec-6] o.apache.ibatis.io.SerialFilterChecker   : As you are using functionality that deserializes object streams, it is recommended to define the JEP-290 serial filter. Please refer to https://docs.oracle.com/pls/topic/lookup?ctx=javase15&id=GUID-8296D8E8-2B93-4B9A-856E-0A65AF9B8C66
+2023-08-08 17:24:40.941  INFO 2408 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-08-08 17:24:40.944  INFO 2408 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-08-08 17:24:48.056  INFO 19588 --- [main] c.c.s.SpringbootTest1Application         : Starting SpringbootTest1Application using Java 1.8.0_172 on LAPTOP-OLDO6QSR with PID 19588 (D:\WorkspacesIDEA\svn\springboot-test1\target\classes started by lenovo in D:\WorkspacesIDEA\svn\springboot-test1)
+2023-08-08 17:24:48.058  INFO 19588 --- [main] c.c.s.SpringbootTest1Application         : The following 1 profile is active: "dev"
+2023-08-08 17:24:48.742  INFO 19588 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-08-08 17:24:48.744  INFO 19588 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-08-08 17:24:48.773  INFO 19588 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+2023-08-08 17:24:49.378  INFO 19588 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-08-08 17:24:49.388  INFO 19588 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-08 17:24:49.388  INFO 19588 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+2023-08-08 17:24:49.552  INFO 19588 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-08 17:24:49.552  INFO 19588 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1447 ms
+2023-08-08 17:24:50.698  WARN 19588 --- [main] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "com.cern.springboottest1.domain.Account"
+2023-08-08 17:24:50.983  INFO 19588 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-08-08 17:24:51.364  INFO 19588 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6c830ebd, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@15f519f7, org.springframework.security.web.context.SecurityContextPersistenceFilter@2299d903, org.springframework.security.web.header.HeaderWriterFilter@6115846e, org.springframework.security.web.csrf.CsrfFilter@6fbe4800, org.springframework.security.web.authentication.logout.LogoutFilter@280ecc33, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4aab7195, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2c3f43d1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3d8d52be, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@1dca62c2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4a336377, org.springframework.security.web.session.SessionManagementFilter@57f0bfc3, org.springframework.security.web.access.ExceptionTranslationFilter@15e5246, org.springframework.security.web.access.intercept.AuthorizationFilter@5a82bc58]
+2023-08-08 17:24:51.445  INFO 19588 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-08-08 17:24:51.458  INFO 19588 --- [main] c.c.s.SpringbootTest1Application         : Started SpringbootTest1Application in 3.952 seconds (JVM running for 5.011)
+2023-08-08 17:24:55.328  INFO 19588 --- [http-nio-8080-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-08 17:24:55.328  INFO 19588 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-08-08 17:24:55.330  INFO 19588 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-08-08 17:24:55.436  INFO 19588 --- [http-nio-8080-exec-3] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-08-08 17:24:57.125  WARN 19588 --- [http-nio-8080-exec-4] o.apache.ibatis.io.SerialFilterChecker   : As you are using functionality that deserializes object streams, it is recommended to define the JEP-290 serial filter. Please refer to https://docs.oracle.com/pls/topic/lookup?ctx=javase15&id=GUID-8296D8E8-2B93-4B9A-856E-0A65AF9B8C66
+2023-08-08 17:25:29.508  INFO 19588 --- [http-nio-8080-exec-8] c.c.s.controller.UserController          : 登录日志 === Someone is logging to the system!!!
+2023-08-08 17:28:05.662  INFO 19588 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-08-08 17:28:05.665  INFO 19588 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-08-08 17:28:10.143  INFO 17264 --- [main] c.c.s.SpringbootTest1Application         : Starting SpringbootTest1Application using Java 1.8.0_172 on LAPTOP-OLDO6QSR with PID 17264 (D:\WorkspacesIDEA\svn\springboot-test1\target\classes started by lenovo in D:\WorkspacesIDEA\svn\springboot-test1)
+2023-08-08 17:28:10.146  INFO 17264 --- [main] c.c.s.SpringbootTest1Application         : The following 1 profile is active: "dev"
+2023-08-08 17:28:10.841  INFO 17264 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-08-08 17:28:10.843  INFO 17264 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-08-08 17:28:10.872  INFO 17264 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+2023-08-08 17:28:11.513  INFO 17264 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-08-08 17:28:11.523  INFO 17264 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-08 17:28:11.523  INFO 17264 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+2023-08-08 17:28:11.685  INFO 17264 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-08 17:28:11.686  INFO 17264 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1493 ms
+2023-08-08 17:28:12.997  WARN 17264 --- [main] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "com.cern.springboottest1.domain.Account"
+2023-08-08 17:28:13.320  INFO 17264 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-08-08 17:28:13.749  INFO 17264 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@69d2fb0a, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7e38e254, org.springframework.security.web.context.SecurityContextPersistenceFilter@1ad1b737, org.springframework.security.web.header.HeaderWriterFilter@7d7b4e04, org.springframework.security.web.csrf.CsrfFilter@b77b0a0, org.springframework.security.web.authentication.logout.LogoutFilter@6996bbc4, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@39e3ea78, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@77d0dbba, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@120411ec, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@43b6cb1c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7b3feb26, org.springframework.security.web.session.SessionManagementFilter@24615687, org.springframework.security.web.access.ExceptionTranslationFilter@210635fd, org.springframework.security.web.access.intercept.AuthorizationFilter@64f3991e]
+2023-08-08 17:28:13.828  INFO 17264 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-08-08 17:28:13.841  INFO 17264 --- [main] c.c.s.SpringbootTest1Application         : Started SpringbootTest1Application in 4.26 seconds (JVM running for 5.329)
+2023-08-08 17:28:21.794  INFO 17264 --- [http-nio-8080-exec-5] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-08 17:28:21.795  INFO 17264 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-08-08 17:28:21.796  INFO 17264 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-08-08 17:28:21.901  INFO 17264 --- [http-nio-8080-exec-5] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-08-08 17:28:24.366  INFO 17264 --- [http-nio-8080-exec-6] c.c.s.controller.UserController          : 登录日志 === Someone is logging to the system!!!
+2023-08-08 17:28:35.140  INFO 17264 --- [http-nio-8080-exec-5] c.c.s.controller.UserController          : 登录日志 === Someone is logging to the system!!!
+2023-08-08 17:31:54.488  INFO 17264 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-08-08 17:31:54.491  INFO 17264 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-08-08 17:36:37.641  INFO 8784 --- [main] c.c.s.SpringbootTest1Application         : Starting SpringbootTest1Application using Java 1.8.0_172 on LAPTOP-OLDO6QSR with PID 8784 (D:\WorkspacesIDEA\svn\springboot-test1\target\classes started by lenovo in D:\WorkspacesIDEA\svn\springboot-test1)
+2023-08-08 17:36:37.644  INFO 8784 --- [main] c.c.s.SpringbootTest1Application         : The following 1 profile is active: "dev"
+2023-08-08 17:36:38.334  INFO 8784 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-08-08 17:36:38.337  INFO 8784 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-08-08 17:36:38.366  INFO 8784 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 0 Redis repository interfaces.
+2023-08-08 17:36:39.014  INFO 8784 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-08-08 17:36:39.026  INFO 8784 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-08 17:36:39.026  INFO 8784 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+2023-08-08 17:36:39.200  INFO 8784 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-08 17:36:39.200  INFO 8784 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1509 ms
+2023-08-08 17:36:40.591  WARN 8784 --- [main] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "com.cern.springboottest1.domain.Account"
+2023-08-08 17:36:40.891  INFO 8784 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-08-08 17:36:41.352  INFO 8784 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6233c6c2, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@312a738d, org.springframework.security.web.context.SecurityContextPersistenceFilter@2bc0b8c8, org.springframework.security.web.header.HeaderWriterFilter@2f07930a, org.springframework.security.web.csrf.CsrfFilter@3d798e76, org.springframework.security.web.authentication.logout.LogoutFilter@10d98940, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2f471037, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3f1158ee, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1a7e799e, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@ba562e0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7e50eeb9, org.springframework.security.web.session.SessionManagementFilter@29d2fa84, org.springframework.security.web.access.ExceptionTranslationFilter@4cfc0c48, org.springframework.security.web.access.intercept.AuthorizationFilter@1cc9bd9b]
+2023-08-08 17:36:41.436  INFO 8784 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-08-08 17:36:41.450  INFO 8784 --- [main] c.c.s.SpringbootTest1Application         : Started SpringbootTest1Application in 4.416 seconds (JVM running for 5.489)
+2023-08-08 17:36:42.913  INFO 8784 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-08 17:36:42.914  INFO 8784 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-08-08 17:36:42.915  INFO 8784 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-08-08 17:36:43.028  INFO 8784 --- [http-nio-8080-exec-2] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
