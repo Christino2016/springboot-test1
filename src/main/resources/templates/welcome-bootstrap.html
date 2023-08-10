@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+    <link th:href="@{/bootstrap-5.2.3/css/bootstrap.css}" rel="stylesheet">
+    <javascript th:src="@{/bootstrap-5.2.3/js/bootstrap.bundle.js}"></javascript>
+    <javascript th:src="@{/js/jquery.min.js}"></javascript>
+</head>
+<body>
+<div class="col-6 m-auto" style="margin-top:30px!important;">
+    <span th:text="${currentYear}">今年</span> -
+    <span th:text="${currentYear} + 1">明年</span>
+    <img src="/image/sad.png">
+
+    <div class="border border-info bg-light p-2" style="border-radius: 5px">
+        <form action="/doWelcome" method="post">
+            <h3 class="text-center">用户登录</h3>
+            <div class="mt-1">
+                <input type="text" id="username" name="username" class="form-control" placeholder="输入用户名" autofocus>
+            </div>
+            <div class="mt-1">
+                <input type="password" id="password" name="password" class="form-control" placeholder="输入密码">
+            </div>
+            <input th:name="${_csrf.parameterName}" th:value="${_csrf.token}" type="hidden">
+            <div class="checkbox text-center" style="height: 50px; position: relative">
+                <label style="position: absolute; top: 20%; bottom: 20%; margin-left: -10%">
+                    <input class="form-check-input text-center" type="checkbox"> 记住我
+                </label>
+            </div>
+            <div class="d-grid">
+                <button class="btn btn-primary btn-block" id="doWelcome" type="submit">登录</button>
+            </div>
+        </form>
+    </div>
+    <div class="border border-info bg-light p-2" style="border-radius: 5px">
+        <table class="table table-striped table-hover table-bordered">
+            <caption>List of users</caption>
+            <thead class="table-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Handle</th>
+            </tr>
+            </thead>
+            <tbody class="table-group-divider">
+            <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td class="table-active">Thornton</td>
+                <td>@fat</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td colspan="2" >Larry the Bird</td>
+                <td>@twitter</td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+                <th>#</th>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
+</body>
+</html>
