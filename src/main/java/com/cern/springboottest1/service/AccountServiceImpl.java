@@ -7,11 +7,13 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.cern.springboottest1.domain.Account;
 import com.cern.springboottest1.mapper.AccountMapper;
+import com.cern.springboottest1.util.FilterDescriptor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.Collection;
+import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 
@@ -34,9 +36,11 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
-    public IPage<Account> searchPage(int pageNo, int pageSize) {
+    public IPage<Account> searchPage(int pageNo, int pageSize, List<FilterDescriptor> filterList) {
         QueryWrapper<Account> wrapper = new QueryWrapper<Account>();
-        wrapper.eq("year", "2023");
+        for(FilterDescriptor filter : filterList) {
+            wrapper.like(filter.getField(), filter.getValue());
+        }
 //        Page<Account> page = new Page<Account>();
 //        page.setCurrent(pageNo);
 //        page.setSize(pageSize);

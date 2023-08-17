@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+
+    <link rel="stylesheet" th:href="@{/kendoui/styles/web/kendo.common.css}">
+    <link rel="stylesheet" th:href="@{/kendoui/styles/web/kendo.default.css}">
+    <link rel="stylesheet" th:href="@{/kendoui/nercita.liutong.css}">
+    <link rel="stylesheet" th:href="@{/kendoui/style.css}">
+
+    <script type="text/javascript" th:src="@{/kendoui/js/jquery.min.js}"></script>
+    <script type="text/javascript" th:src="@{/kendoui/js/jquery.form/jquery.form.js}"></script>
+    <script type="text/javascript" th:src="@{/kendoui/js/jszip.min.js}"></script>
+    <script type="text/javascript" th:src="@{/kendoui/js/kendo.all.js}"></script>
+    <script type="text/javascript" th:src="@{/kendoui/js/cultures/kendo.cultures.zh-CN.js}"></script>
+    <script type="text/javascript" th:src="@{/kendoui/js/messages/kendo.messages.zh-CN.js}"></script>
+    <script type="text/javascript" th:src="@{/js/kendoui/nercita.liutong.js}"></script>
+    <script type="text/javascript" th:src="@{/js/kendoui/z.js}"></script>
+
+    <script th:inline="javascript">
+        let grid;
+        //查询参数
+        function setpara(options, operation) {
+            if (operation == "read") {
+                var map={};
+                if (options.take)
+                    map.take = options.take;
+                if (options.skip)
+                    map.skip = options.skip;
+                if (options.page)
+                    map.page = options.page;
+                if (options.pageSize)
+                    map.pageSize = options.pageSize;
+                if (options.filter){
+                    map.filter = options.filter;
+                }else{
+                    var defaultFilter=[
+                        { field: "year", value: "[[${currentYear}]]" },
+                        //{ field: "username", value: "[[${name}]]" },
+                    ];
+                    var filters ={"filters":defaultFilter};
+                    map.filter=filters;
+                }
+                if (options.sort)
+                    map.sort = options.sort;
+                return {models:kendo.stringify(map)};
+            }else if (operation !== "read" && options.models) {
+                return {models:kendo.stringify(options.models)};
+            }
+        }
+
+        //数据列表
+        $(function (){
+            //中文
+            kendo.culture("zh-CN");
+            //alert('adsfasdf');
+            //年度
+                $("#yearId").kendoDatePicker({
+                format: "yyyy",
+                depth: "decade",
+                start: "decade",
+                value:"[[${currentYear}]]",
+                change: function() {
+                    let d = this.value();
+                    search();
+                }
+            });
+            //读取数据
+            let myDataSource = new kendo.data.DataSource({
+                transport : {
+                    read : {
+                        type : "GET",
+                        url : "/account/result",
+                        dataType : "json",
+                    },
+                    parameterMap : setpara
+                },
+                batch : true,
+                pageSize : 10,
+                schema : {
+                    data : function(d) {
+                        return d.data;
+                    },
+                    total : function(d) {
+                        return d.count;
+                    },
+                    model:{
+                        id: "id",
+                        fields: {
+                            id: { editable: false, nullable: true },
+                            name: { validation: { required: true } },
+                            modifier: { editable: false},
+                            modifyTime: { type:"date", editable: false }
+                        }
+
+                    }
+                },
+                serverPaging : true,
+                serverSorting : true,
+                serverFiltering : true
+            });
+            //加载grid
+            grid = $("#grid").kendoGrid({
+                dataSource: myDataSource,
+                pageable: {
+                    refresh: true,
+                    pageSizes: true,
+                    buttonCount: 5,
+                },
+                sortable:{
+                    refresh: true,
+                    mode: "multiple",
+                    allowUnsort: true
+                },
+                resizable: true,
+                columns: [
+                    {
+                        field: "id",
+                        headerAttributes: {
+                            style: "text-align: center;"
+                        },
+                        title:"<input type='checkbox' id='selectAll' onclick='selectAll()' />",
+                        width:30,
+                        template: "<input type='checkbox' id='#= id #' value='#= id #' name='selectID'  />",
+                        sortable:false
+                    },
+                    {
+                        field: "year",
+                        headerAttributes: {
+                            style: "text-align: center;"
+                        },
+                        title: "年度",
+                        width: 80
+                    },
+                    {
+                        field: "username",
+                        headerAttributes: {
+                            style: "text-align: center;"
+                        },
+                        title: "用户名",
+                        width: 80
+                    },
+
+                    {
+                        field: "password",
+                        headerAttributes: {
+                            style: "text-align: center;"
+                        },
+                        title: "密码",
+                        width: 80
+                    },
+
+                    {
+                        field: "role",
+                        headerAttributes: {
+                            style: "text-align: center;"
+                        },
+                        title: "角色",
+                        width: 80
+                    },
+                    {
+                        field: "id",
+                        title: "操作",
+                        headerAttributes: {
+                            style: "text-align: center;"
+                        },
+                        width: 80,
+                        template: function(dataItem){
+                            return ""
+                                + "<input type='button' class='oper' value='概要编辑' onclick='edit(\""+dataItem.id+"\")' />"
+                                //+"<input type='button' class='oper' value='汇总报告导出' onclick='exportWordCorn(\""+dataItem.id+"\")' />";
+                                +"<input type='button' class='oper' value='报告导出' onclick='exportWord2(\""+dataItem.id+"\")' />";
+
+                        },
+                        sortable:false
+                    }
+                ]
+            });
+
+        });
+
+        //查询
+        function search() {
+            let year = $("#yearId").val();
+            let name = $("#nameId").val();
+
+            let filter=[
+                { field: "year", value: year },
+                { field: "username", value: name },
+            ];
+            grid.data("kendoGrid").dataSource.filter(filter);
+        }
+    </script>
+</head>
+<body>
+    <div class="col-6 m-auto" style="margin-top:30px!important;">
+        <span th:text="${currentYear}">今年</span> -
+        <span th:text="${currentYear} + 1">明年</span>
+        <img th:src="@{/image/sad.png}">
+
+        <div class="border border-info bg-light p-2" style="border-radius: 5px">
+            <form action="/doWelcome" method="post">
+                <h3 class="text-center">用户登录</h3>
+                <div class="form-item">
+                    <input type="text" id="username" name="username" class="form-control" placeholder="输入用户名" autofocus>
+                </div>
+                <div class="form-item">
+                    <input type="password" id="password" name="password" class="form-control" placeholder="输入密码">
+                </div>
+                <!--
+                <input th:name="${_csrf.parameterName}" th:value="${_csrf.token}" type="hidden">
+                -->
+                <div class="checkbox text-center" style="height: 50px; position: relative">
+                    <label style="position: absolute; top: 20%; bottom: 20%; margin-left: -10%">
+                        <input class="form-check-input text-center" type="checkbox"> 记住我
+                    </label>
+                </div>
+                <div class="d-grid">
+                    <button class="btn btn-default btn-action" id="doWelcome" type="submit">登录</button>
+                    <button type="button" class="btn btn-default btn-action" onclick="search();">查询</button>
+                </div>
+            </form>
+        </div>
+
+        <div id="zMain">
+            <div id="zPanel">
+                <div class="z-material">
+
+                    <div class="z-block material-query">
+                        <div class="basic-query" id="basicQuery" >
+                            <span class="material-name" style="text-align:right;"><span class="s">年度：</span></span>
+                            <div class="query-conditions" style="width:250px">
+                                <!--
+                                <input id="yearId" name="year" style="width:210px" type="text" th:value="${currentYear}"/>
+                                -->
+                                <input id="yearId" name="year" style="width:210px" type="text" />
+                            </div>
+
+                            <span class="material-name" ><span class="s">用户名：</span></span>
+                            <div class="query-conditions" style="width:250px">
+                                <input class="k-textbox" placeholder="请输入试验组名称..." id="nameId" name="name" type="text" style="width:210px"/>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="z-block material-query">
+                        <div class="basic-query" id="basicQuery">
+                            <div class="query-actions">
+                                <button type="button" class="btn btn-default btn-action" onclick="search();"><i class="icon icon-q"></i>查询</button>
+                                <button type="button" class="btn btn-default btn-action" onclick="clearSearch();"><i class="icon icon-cancel"></i>清除</button>
+
+                                <sec:authorize ifAnyGranted="ROLE_PLANTLAYOUT_LAYOUT_LIST">
+                                </sec:authorize>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="split5"></div>
+                    <div id="example" class="z-block list-wrap">
+                        <!--
+                        <sec:authorize ifAnyGranted="ROLE_SYSTEM_USER_ADD">
+                               <button type="button" class="btn btn-default btn-action" onclick="dataProcess();"><i class="icon icon-add"></i>数据处理</button>
+                        </sec:authorize>
+                        -->
+                        <div class="split5"></div>
+                        <div id="grid" class="z-table"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

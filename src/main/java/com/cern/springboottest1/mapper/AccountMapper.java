@@ -16,5 +16,4 @@ public interface AccountMapper extends BaseMapper<Account> {
     @Select("select * from t_account where username = #{username}")
     List<Account> findByUsername(@Param("username") String username);
 
-
 }
