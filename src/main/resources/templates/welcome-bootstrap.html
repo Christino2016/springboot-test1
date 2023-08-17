@@ -3,9 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Welcome</title>
+    <!--
     <link th:href="@{/bootstrap-5.2.3/css/bootstrap.css}" rel="stylesheet">
     <javascript th:src="@{/bootstrap-5.2.3/js/bootstrap.bundle.js}"></javascript>
     <javascript th:src="@{/js/jquery.min.js}"></javascript>
+    -->
+
+    <link rel="stylesheet" th:href="@{/kendoui/styles/web/kendo.common.css}">
+    <link rel="stylesheet" th:href="@{/kendoui/styles/web/kendo.default.css}">
+    <link rel="stylesheet" th:href="@{/kendoui/nercita.liutong.css}">
+
+    <script type="text/javascript" th:src="@{/kendoui/js/jquery.min.js}"></script>
+    <script type="text/javascript" th:src="@{/kendoui/js/jquery.form/jquery.form.js}"></script>
+    <script type="text/javascript" th:src="@{/kendoui/js/jszip.min.js}"></script>
+    <script type="text/javascript" th:src="@{/kendoui/js/kendo.all.js}"></script>
+    <script type="text/javascript" th:src="@{/kendoui/js/cultures/kendo.cultures.zh-CN.js}"></script>
+    <script type="text/javascript" th:src="@{/kendoui/js/messages/kendo.messages.zh-CN.js}"></script>
+    <script type="text/javascript" th:src="@{/js/kendoui/nercita.liutong.js}"></script>
 </head>
 <body>
 <div class="col-6 m-auto" style="margin-top:30px!important;">
@@ -16,10 +30,10 @@
     <div class="border border-info bg-light p-2" style="border-radius: 5px">
         <form action="/doWelcome" method="post">
             <h3 class="text-center">用户登录</h3>
-            <div class="mt-1">
+            <div class="form-item">
                 <input type="text" id="username" name="username" class="form-control" placeholder="输入用户名" autofocus>
             </div>
-            <div class="mt-1">
+            <div class="form-item">
                 <input type="password" id="password" name="password" class="form-control" placeholder="输入密码">
             </div>
             <input th:name="${_csrf.parameterName}" th:value="${_csrf.token}" type="hidden">
@@ -29,7 +43,7 @@
                 </label>
             </div>
             <div class="d-grid">
-                <button class="btn btn-primary btn-block" id="doWelcome" type="submit">登录</button>
+                <button class="btn btn-default btn-action" id="doWelcome" type="submit">登录</button>
             </div>
         </form>
     </div>
